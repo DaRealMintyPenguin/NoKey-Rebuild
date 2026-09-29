@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nation Pedscale</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/fontawesome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/regular.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/solid.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/sharp-light.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="title"><span class="menu_title"></span></div>
+        <div class="info-text">
+            <ul>
+                <li class="info1"></li>
+                <li class="info2"></li>
+                <li class="info3"></li>
+                <li class="info4"></li>
+            </ul>
+        </div>
+        <div class="height-controls">
+            <div class="slider-group">
+                <div class="slider-label scale_label"></div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="heightSlider" min="50" max="120" value="0" step="1">
+                    <input type="number" value="0" class="height-value" id="heightValue">
+                </div>
+            </div>
+            <div class="slider-group">
+                <div class="slider-label zoffset_label"></div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="zOffsetSlider" min="-30" max="30" value="0" step="1">
+                    <input type="number" value="0.00" class="height-value" id="zOffsetValue" step="0.01" min="-0.3" max="0.3">
+                </div>
+            </div>
+        </div>
+        <div class="action-buttons">
+            <div class="button-container">
+                <button id="saveBtn"><i class="fa-solid fa-check"></i></button>
+                <div class="button-label save"></div>
+            </div>
+            <div class="button-container">
+                <button id="resetBtn"><i class="fa-solid fa-rotate-left"></i></button>
+                <div class="button-label reset"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Weapon Alignment Panel -->
+    <div class="wa-panel" id="waPanel">
+        <div class="wa-title"><i class="fa-solid fa-crosshairs"></i> WEAPON ALIGN</div>
+        <div class="wa-model" id="waModel">Model: —</div>
+
+        <div class="wa-section">
+            <div class="wa-section-title"><i class="fa-solid fa-arrows-up-down-left-right"></i> Position</div>
+            <div class="wa-values">
+                <div class="wa-val">X: <span id="waOffX">0.000</span></div>
+                <div class="wa-val">Y: <span id="waOffY">0.000</span></div>
+                <div class="wa-val">Z: <span id="waOffZ">0.000</span></div>
+            </div>
+        </div>
+
+        <div class="wa-section">
+            <div class="wa-section-title"><i class="fa-solid fa-rotate"></i> Rotation</div>
+            <div class="wa-values">
+                <div class="wa-val">X: <span id="waRotX">0.0</span></div>
+                <div class="wa-val">Y: <span id="waRotY">0.0</span></div>
+                <div class="wa-val">Z: <span id="waRotZ">0.0</span></div>
+            </div>
+        </div>
+
+        <div class="wa-divider"></div>
+
+        <div class="wa-section">
+            <div class="wa-section-title"><i class="fa-solid fa-keyboard"></i> Controls</div>
+            <div class="wa-keys">
+                <div class="wa-key-row"><span class="wa-kbd">W A S D</span> Position XY</div>
+                <div class="wa-key-row"><span class="wa-kbd">R</span> / <span class="wa-kbd">F</span> Position Z</div>
+                <div class="wa-key-row"><span class="wa-kbd">Q</span> / <span class="wa-kbd">E</span> Rotation X</div>
+                <div class="wa-key-row"><span class="wa-kbd">← →</span> Rotation Y</div>
+                <div class="wa-key-row"><span class="wa-kbd">↑ ↓</span> Rotation Z</div>
+            </div>
+        </div>
+
+        <div class="wa-section">
+            <div class="wa-section-title"><i class="fa-solid fa-gear"></i> Actions</div>
+            <div class="wa-keys">
+                <div class="wa-key-row"><span class="wa-kbd">Shift</span> Step: <span id="waStep">0.01</span></div>
+                <div class="wa-key-row"><span class="wa-kbd">Scroll</span> Camera Zoom</div>
+                <div class="wa-key-row"><span class="wa-kbd">Mouse</span> Camera Rotate</div>
+                <div class="wa-key-row"><span class="wa-kbd">T</span> <span id="waAimMode" style="color:#2196f3">Aim Mode: OFF</span></div>
+                <div class="wa-key-row"><span class="wa-kbd">Enter</span> <span style="color:#4caf50">Save</span></div>
+                <div class="wa-key-row"><span class="wa-kbd">Backspace</span> Reset</div>
+                <div class="wa-key-row"><span class="wa-kbd">X</span> <span style="color:#f44336">Exit</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
