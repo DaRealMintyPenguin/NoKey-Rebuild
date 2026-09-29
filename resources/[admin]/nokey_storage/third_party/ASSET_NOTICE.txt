@@ -1,0 +1,7 @@
+BzZz Shop Locker V2 assets
+
+The streamed locker assets bundled in this resource originated from the BzZz Shop Locker V2 package supplied by the server owner.
+Original author: BzZz
+Original resource name: bzzz_shop_locker
+
+Keep these assets for the licensed server/project they were supplied for. Do not redistribute the original paid asset pack separately.

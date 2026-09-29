@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoKey Storage</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main id="app" class="app hidden" aria-hidden="true">
+        <div class="ambient ambient-one"></div>
+        <div class="ambient ambient-two"></div>
+        <section class="terminal">
+            <aside class="sidebar">
+                <div class="brand">
+                    <img src="assets/logo.png" alt="NoKey" />
+                    <div>
+                        <span class="eyebrow">NOKEY RP</span>
+                        <h1>Secure Storage</h1>
+                    </div>
+                </div>
+
+                <div class="status-card">
+                    <span class="status-dot"></span>
+                    <div>
+                        <small>TERMINAL ONLINE</small>
+                        <strong id="locationName">NoKey Storage</strong>
+                    </div>
+                </div>
+
+                <nav class="nav">
+                    <button class="nav-button active" data-page="open">
+                        <span class="nav-icon">▣</span>
+                        <span>
+                            <strong>Open Locker</strong>
+                            <small>Access secured goods</small>
+                        </span>
+                    </button>
+                    <button id="adminTab" class="nav-button admin-only" data-page="create">
+                        <span class="nav-icon">＋</span>
+                        <span>
+                            <strong>Create Locker</strong>
+                            <small>Staff provisioning</small>
+                        </span>
+                    </button>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <span>YOUR REPLACEMENT GOODS,</span>
+                    <strong>SAFELY SECURED.</strong>
+                </div>
+            </aside>
+
+            <section class="content">
+                <header class="topbar">
+                    <div>
+                        <span class="eyebrow">COMPENSATION NETWORK</span>
+                        <h2 id="pageTitle">Open your storage locker</h2>
+                    </div>
+                    <button id="closeButton" class="close-button" aria-label="Close">×</button>
+                </header>
+
+                <div id="openPage" class="page active">
+                    <div class="hero-copy">
+                        <h3>Welcome back.</h3>
+                        <p>Enter your storage box number and private PIN. Your PIN is checked securely by the server before the inventory can be opened.</p>
+                    </div>
+
+                    <form id="openForm" class="form-grid compact" autocomplete="off">
+                        <label>
+                            <span>Storage box number</span>
+                            <div class="input-shell">
+                                <span class="input-prefix">#</span>
+                                <input id="openBoxNumber" name="boxNumber" type="text" inputmode="numeric" maxlength="8" placeholder="1042" required />
+                            </div>
+                        </label>
+
+                        <label>
+                            <span>Private PIN</span>
+                            <div class="input-shell">
+                                <span class="input-prefix">••</span>
+                                <input id="openPin" name="pin" type="password" inputmode="numeric" maxlength="8" placeholder="••••" required />
+                            </div>
+                        </label>
+
+                        <button id="openSubmit" class="primary-button" type="submit">
+                            <span>OPEN LOCKER</span>
+                            <span class="button-arrow">→</span>
+                        </button>
+                    </form>
+
+                    <div class="security-strip">
+                        <div><span>01</span><p>Enter your box number</p></div>
+                        <div><span>02</span><p>Authenticate with your PIN</p></div>
+                        <div><span>03</span><p>Collect your secured goods</p></div>
+                    </div>
+                </div>
+
+                <div id="createPage" class="page">
+                    <div class="hero-copy">
+                        <h3>Provision a new locker.</h3>
+                        <p>Staff only. Create a persistent ox_inventory stash and assign the customer a box number and PIN.</p>
+                    </div>
+
+                    <form id="createForm" class="form-grid" autocomplete="off">
+                        <label>
+                            <span>Storage box number</span>
+                            <div class="input-shell">
+                                <span class="input-prefix">#</span>
+                                <input id="createBoxNumber" type="text" inputmode="numeric" maxlength="8" placeholder="1042" required />
+                            </div>
+                        </label>
+
+                        <label>
+                            <span>PIN</span>
+                            <div class="input-shell">
+                                <span class="input-prefix">••</span>
+                                <input id="createPin" type="password" inputmode="numeric" maxlength="8" placeholder="4-8 digits" required />
+                            </div>
+                        </label>
+
+                        <label class="wide-field">
+                            <span>Locker label <em>optional</em></span>
+                            <div class="input-shell">
+                                <input id="createLabel" type="text" maxlength="64" placeholder="Compensation Locker #1042" />
+                            </div>
+                        </label>
+
+                        <label>
+                            <span>Slots</span>
+                            <div class="input-shell">
+                                <input id="createSlots" type="number" min="10" max="200" value="100" />
+                            </div>
+                        </label>
+
+                        <label>
+                            <span>Capacity (kg)</span>
+                            <div class="input-shell">
+                                <input id="createWeight" type="number" min="10" max="5000" value="1000" />
+                            </div>
+                        </label>
+
+                        <button id="createSubmit" class="primary-button wide-field" type="submit">
+                            <span>CREATE SECURE LOCKER</span>
+                            <span class="button-arrow">＋</span>
+                        </button>
+                    </form>
+                </div>
+
+                <div id="toast" class="toast" role="status"></div>
+            </section>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
